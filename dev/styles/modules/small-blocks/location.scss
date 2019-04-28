@@ -1,0 +1,226 @@
+.location{
+	width: 175px;
+	flex: 0 0 175px;
+	position: relative;
+	&__header{
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		position: relative;
+		& > * {
+			&:not(:last-child) {margin-right: 10px;}
+		}
+	}
+	&__icon{
+		width: 16px;
+		height: 16px;
+		fill: $base-text-color;
+		flex-shrink: 0;
+	}
+	&__current{
+		display: block;
+		padding-right: 10px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		&:after{
+			content: '';
+			border-color: #000000 transparent transparent transparent;
+			border-style: solid;
+			border-width: 4px 4.5px 0 4.5px;
+			margin-left: 10px;
+			width: 0;
+			height: 0;
+			position: absolute;
+			right: 0;
+			top: 7px;
+			z-index: 1;
+		}
+	}
+	&__body{
+		&.is-location-choose{
+			@media screen and(max-width: $tablet-size) {
+				background-color: rgba(#003333, .3);
+				bottom: 0;
+				left: 0;
+				position: fixed;
+				right: 0;
+				top: 0;
+				z-index: 3;
+			}
+			.location-choose{
+				display: flex;
+			}
+		}
+	}
+	&-question{
+		align-items: center;
+		background-color: $white;
+		border-radius: 4px;
+		box-shadow: 0 0 5px 0 rgba(159, 197, 178, 0.5);
+		display: flex;
+		left: 0;
+		padding: 8px 10px;
+		position: absolute;
+		top: calc(100% + 10px);
+		z-index: 1;
+		@media screen and(max-width: $tablet-size) {
+			max-width: 728px;
+		}
+		@media screen and(max-width: $phone-size) {
+			border: 2px solid $main-action-color;
+			position: fixed;
+			bottom: 0;
+			flex-direction: column;
+			max-width: 100%;
+			padding: 10px 20px 20px;
+			right: 0;
+			top: auto;
+		}
+		& > * {
+			&:not(:last-child) {
+				margin-right: 15px;
+				@media screen and(max-width: $phone-size) {
+					margin-right: 0;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			top: -10px;
+			left: 15%;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 10px 10px 10px;
+			border-color: transparent transparent #ffffff transparent;
+			@media screen and(max-width: $phone-size) {
+				display: none;
+			}
+		}
+		&__buttons{
+			align-items: center;
+			display: flex;
+			& > * {
+				&:not(:last-child) {margin-right: 10px;}}
+		}
+		&__text{
+			font-size: 18px;
+			line-height: 1.44;
+			font-family: $medium-font;
+			white-space: nowrap;
+			@media screen and(max-width:$tablet-size) {
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			@media screen and(max-width: $phone-size){
+				white-space: normal;
+			}
+		}
+	}
+	&-choose{
+		background-color: $white;
+		border: 2px solid $main-action-color;
+		border-radius: 4px;
+		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+		display: none;
+		flex-direction: column;
+		left: 20px;
+		position: absolute;
+		top: 10px;
+		width: 210px;
+		z-index: 1;
+		@media screen and(max-width: $phone-size) {
+			bottom: 30px;
+			right: 20px;
+			top: 60px;
+			width: auto;
+		}
+
+		&__close{
+			@include size(30px);
+			align-items: center;
+			cursor: pointer;
+			display: none;
+			justify-content: center;
+			position: absolute;
+			right: 0;
+			top: -30px;
+			@media screen and(max-width: $tablet-size) {
+				display: flex;
+			}
+			&-icon{
+				@include size(16px);
+				fill: $main-action-color;
+			}
+		}
+
+		&__header{
+			border-bottom: 2px solid $main-action-color;
+		}
+		&__list{
+			height: 100%;
+			overflow: auto;
+			padding: 15px 0;
+		}
+		&__item{
+			cursor: pointer;
+			font-size: 14px;
+			font-family: $medium-font;
+			line-height: 18px;
+			padding: 5px 15px;
+			transition: all linear .2s;
+			&:hover{ background-color: $main-action-color; }
+		}
+		&__body{
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			max-height: 240px;
+			position: relative;
+			overflow: hidden;
+			@media screen and(max-width: $phone-size) {
+				max-height: 100%;
+			}
+			&:after,
+			&:before{
+				content: '';
+				display: block;
+				left: 0;
+				height: 30px;
+				position: absolute;
+				right: 0;
+			}
+			&:before{
+				top: 0;
+				background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
+			}
+			&:after{
+				background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+				bottom: 0;
+			}
+		}
+	}
+	&-mobile{
+		color: $base-text-color;
+		.location{
+			&__icon{
+				fill: $link-color;
+			}
+			&__current{
+				color: $link-color;
+				&:after{
+					display: none;
+				}
+			}
+			&-choose{
+					&__item{
+						color: $base-text-color;
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,27 @@
+.sandwich{
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	height: 15px;
+	width: 23px;
+	&--active{
+		.sandwich__line{
+			&--top{
+				transform: translateY(8px) rotate(45deg);
+			}
+			&--middle{opacity: 0;}
+			&--bottom{
+				transform: translateY(-5px) rotate(-45deg);
+			}
+		}
+	}
+	&__line{
+		background-color: $white;
+		display: block;
+		height: 2px;
+		width: 100%;
+		transition: all linear .3s;
+		margin-bottom: 5px;
+		&:last-child {margin-bottom: 0;}
+	}
+}

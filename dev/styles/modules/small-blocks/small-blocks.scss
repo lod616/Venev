@@ -1,0 +1,214 @@
+@import "banner";
+@import "location";
+@import "section";
+@import "sales-leader";
+
+.logo{
+	color: $white;
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+	width: 100%;
+	max-width: 160px;
+	&__img{
+		width: 100%;
+	}
+}
+
+
+.search{
+	align-items: center;
+	display: flex;
+	& > * {
+		&:not(:last-child) {margin-right: 10px;}
+	}
+	&__icon{
+		@include size(22px);
+		fill: $white;
+	}
+	.input-field{
+		flex: 0 0 220px;
+		width: 220px;
+		@media screen and(max-width: $tablet-size) {
+			display: none;
+		}
+	}
+}
+
+.order-callback{
+	display: flex;
+	flex-direction: column;
+	&__description{font-size: 12px;}
+	&__phone{
+		color: $main-action-color;
+		font-family: $boldest-font;
+		font-size: 24px;
+		line-height: 1.5;
+		white-space: nowrap;
+	}
+	&__link {
+		color: $white;
+		font-family: $medium-font;
+		font-size: 14px;
+		text-decoration: underline;
+	}
+}
+
+.title{
+	&-page{
+		font-family: $medium-font;
+		font-size: 40px;
+		line-height: 1.25;
+		@media screen and(max-width: $phone-size){
+			font-size: 30px;
+		}
+	}
+	&-section{
+		font-family: $medium-font;
+		font-size: 40px;
+		line-height: 1.25;
+		@media screen and(max-width: $phone-size){
+			font-size: 30px;
+		}
+	}
+}
+
+
+.count-text{
+	color: $text-info-color;
+	font-size: 14px;
+	margin-left: 5px;
+}
+
+.slider-nav{
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all linear .3s;
+	opacity: 0.5;
+	&:hover{opacity: 1;}
+	&.slider-nav{
+		&--prev{
+			left: -55px;
+			@media screen and(max-width: $phone-size) {
+				left: 0;
+			}
+		}
+		&--next{
+			right: -55px;
+			@media screen and(max-width: $phone-size) {
+				right: 0;
+			}
+		}
+	}
+	&.slick-disabled{
+		cursor: default;
+		&:hover{
+			opacity: 0.5;
+		}
+	}
+	&__icon{
+		@include size(30px);
+		fill: $base-text-color;
+	}
+}
+
+.slick-dots{
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	& > * {
+		&:not(:last-child) {margin-right: 10px;}}
+	.slick-active{
+		button {
+			background-color: $main-action-color;
+		}
+	}
+	button{
+		@include size(10px);
+		background-color: $slider-dot-bg-color;
+		border: 0;
+		border-radius: 2px;
+		cursor: pointer;
+		display: block;
+		padding: 0;
+		text-indent: -9999px;
+	}
+}
+
+
+.upgrade{
+	align-items: center;
+	display: flex;
+	font-size: 14px;
+	& > * {
+		&:not(:last-child) {margin-right: 10px;}}
+	&__link{
+		text-decoration: underline;
+	}
+	&__icon{
+		@include size(10px);
+		&-wrapper{
+			@include size(16px);
+			align-items: center;
+			background-color: $text-info-color;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
+.questions{
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	@media screen and(max-width: $phone-size) {
+		flex-direction: column;
+	}
+	& > * {
+		@media screen and(max-width: $phone-size) {
+			margin: 10px 0;
+			&:first-child {margin-top: 0;}
+			&:last-child {margin-bottom: 0;}
+		}
+	}
+}
+
+.ask-your-question{
+	align-items: center;
+	display: flex;
+	& > * {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+	&__list{
+		align-items: center;
+		display: flex;
+		& > * {
+			&:not(:last-child) {margin-right: 20px;}}
+	}
+	&__link{
+		align-items: center;
+		display: flex;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 10px;
+				@media screen and(max-width: $tablet-size) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	&__icon{
+		@include size(24px);
+		fill: $base-text-color;
+	}
+	&__text{
+		@media screen and(max-width: $tablet-size) {
+			display: none;
+		}
+	}
+}

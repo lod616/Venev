@@ -1,0 +1,38 @@
+.s {
+	&-bg-white{background-color: $white;}
+	&-popular-categories{padding-bottom: 10px;}
+	&-sales-leaders{padding-bottom: 20px;}
+	&-questions{ padding: 10px 0; }
+}
+
+.section-mobile-footer{
+	display: none;
+	margin-top: 20px;
+	@media screen and(max-width: $phone-size) {
+		display: block;
+		text-align: center;
+	}
+	&__link{
+		color: $link-color;
+		text-decoration: underline;
+		font-family: $medium-font;
+	}
+}
+
+.section-header{
+	align-items: center;
+	display: flex;
+	margin-bottom: 20px;
+	&__right{
+		margin-left: auto;
+		white-space: nowrap;
+		@media screen and(max-width: $phone-size) {
+			display: none;
+		}
+	}
+	&__link{
+		color: $link-color;
+		font-family: $medium-font;
+		text-decoration: underline;
+	}
+}

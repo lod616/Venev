@@ -1,0 +1,63 @@
+.popup{
+	border-radius: 8px;
+	max-width: 520px;
+	margin: 50px auto;
+	position: relative;
+	@media screen and(max-width: $phone-size){
+		margin: 50px 15px;
+	}
+	&__title{
+		font-size: 18px;
+		line-height: 1.44;
+	}
+	&__header{
+		align-items: center;
+		background-color: $light-bg-color;
+		border-radius: 8px 8px 0 0;
+		display: flex;
+		padding: 15px 25px 15px 40px;
+		@media screen and(max-width: $phone-size) {
+			padding: 10px 20px;
+		}
+	}
+	&__close{
+		@include size(30px);
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		margin-left: auto;
+		opacity: .2;
+		@media screen and(max-width: $phone-size) {
+			fill: $main-action-color;
+			opacity: 1;
+			margin-left: 0;
+			position: absolute;
+			right: 0;
+			top: -30px;
+		}
+		&:hover{ 
+			opacity: .8;
+			@media screen and(max-width: $phone-size){
+				opacity: 1;
+			}
+		}
+		&-icon{
+			@include size(16px);
+		}
+	}
+	&__body{
+		background-color: $white;
+		padding: 40px;
+		border-radius: 0 0 4px 4px;
+		@media screen and(max-width: $phone-size) {
+			padding: 30px 20px;
+		}
+	}
+}
+
+.mfp-bg{
+	background-color: $base-text-color;
+	opacity: 0.4;
+}
+
